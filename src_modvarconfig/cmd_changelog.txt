@@ -1,0 +1,51 @@
+VARP(showkpd, 0, 0, 1);
+VARP(showaccuracy, 0, 0, 1);
+VARP(showdamage, 0, 0, 2);
+VARP(showspecicons, 0, 1, 1);
+weaponstats;
+spec teleport;
+paused spec movement;
+sessionlen - displaying the sessionlength into console
+VARP(renameprotection, 0, 0, 1);
+screenshot output message;
+VARP(hideping, 0, 0, 1);
+ -> VARP(pingvalue, INT_MIN, 0, INT_MAX);
+VARP(showctfflagicons, 0, 1, 1);
+add fragmessages
+->  VARP(fragmsg, 0, 0, 2);
+    VARP(fragmsgmax, 1, 3, 10);
+    VARP(fragmsgmillis, 0, 3000, 10000);
+    VARP(fragmsgfade, 0, 1, 1);
+    FVARP(fragmsgx, 0, 0.5f, 1.0f);
+    FVARP(fragmsgy, 0, 0.15f, 1.0f);
+    FVARP(fragmsgscale, 0, 0.5f, 1.0f);
+VARP(showteamsize, 0, 1, 1); // maybe for all vs all's?
+VARP(savestats, 0, 1, 1);
+->  ICOMMAND(localstats, "", (), printlocalstats());
+    ICOMMAND(resetlocalstats, "", (), resetlocalstats());
+    VARP(totalplaytime, 0, 0, INT_MAX);
+    VARP(totalspectime, 0, 0, INT_MAX);
+    //VARP(totaldemotime, 0, 0, INT_MAX); // maybe for modes etc
+    VARP(totalfrags, INT_MIN, 0, INT_MAX);
+    VARP(totaldeaths, INT_MIN, 0, INT_MAX);
+    VARP(totalflags, 0, 0, INT_MAX);
+timestamp on log.txt creating an unique file for each session
+VARP(showflags, 0, 1, 1); // showing flag count, if the respective player has any, next to the fragcount (frags/flags)
+filterserver - way to search for servers (mode, map or description)
+VAR(hidehud, 0, 0, 2); // draw crosshair but disable hud -> 1 = disable hud, 2 = disable hud but show crosshair
+VARP(setplayermodel, -1, -1, 4); // force different playermodels - -1 is default
+
+
+TODO
+change colors for scoreboard
+make an extra column for flags - hideflags?
+
+TODO kinda but already did
+showclientnum 2 but fixed
+update localstats - probably broken in some way but whateva
+    -> add more features
+addfriend (cn) based?
+    just marking other players like 'highlightscore' does?
+hudscore showing flag if flag is taken?
+improved fragmsg - add other events?
+clientsided name saver (for player1 only)
